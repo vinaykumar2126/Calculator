@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            background-color: aquamarine;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            min-width: 100vw;
+        }
+
+        .symbols{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row{
+            display: flex;
+            flex-direction: row;
+        }
+
+        button{
+            min-width: 5rem;
+            padding: .3rem;
+        }
+
+        .input{
+            display: flex;
+            flex-direction: row-reverse;
+            min-height: 2rem;
+            border: 2px solid black;
+        }
+
+        .display{
+            display: flex;
+            flex-direction: row-reverse;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input">   
+        </div>
+        <h3 class="display">
+        </h3> 
+        <div class="symbols">
+            <div class="row">
+                <button class="one">1</button>
+                <button class="two">2</button>
+                <button class="three">3</button>
+            </div>
+            <div class="row">
+                <button class="four">4</button>
+                <button class="five">5</button>
+                <button class="six">6</button>
+            </div>
+            <div class="row">
+                <button class="seven">7</button>
+                <button class="eight">8</button>
+                <button class="nine">9</button>
+            </div>
+            <div class="row">
+                <button class="zero">0</button>
+                <button class="plus">+</button>
+                <button class="minus">-</button>
+            </div>
+            <div class="row">
+                <button class="multiply">x</button>
+                <button class="divide">/</button>
+                <button class="equal">=</button>
+            </div>
+            <div class="row">
+                <button class="backspace">&lt;=</button>
+                <button class="clear">CE</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const one = document.querySelector(".one");
+    const two = document.querySelector(".two");
+    const three = document.querySelector(".three");
+    const four = document.querySelector(".four");
+    const five = document.querySelector(".five");
+    const six = document.querySelector(".six");
+    const seven = document.querySelector(".seven");
+    const eight = document.querySelector(".eight");
+    const nine = document.querySelector(".nine");
+    const zero = document.querySelector(".zero");
+    const plus = document.querySelector(".plus");
+    const minus = document.querySelector(".minus");
+    const multiply = document.querySelector(".multiply");
+    const divide = document.querySelector(".divide");
+    const equal = document.querySelector(".equal");
+    const backspace = document.querySelector(".backspace");
+    const clear = document.querySelector(".clear");
+
+    const input = document.querySelector(".input");
+    const display = document.querySelector(".display");
+
+    one.onclick = () => {
+        input.append("1");
+    }
+
+    two.onclick = () => {
+        input.append("2");
+    }
+
+    three.onclick = () => {
+        input.append("3");
+    }
+
+    four.onclick = () => {
+        input.append("4");
+    }
+
+    five.onclick = () => {
+        input.append("5");
+    }
+
+    six.onclick = () => {
+        input.append("6");
+    }
+
+    seven.onclick = () => {
+        input.append("7");
+    }
+
+    eight.onclick = () => {
+        input.append("8");
+    }
+
+    nine.onclick = () => {
+        input.append("9");
+    }
+
+    zero.onclick = () => {
+        input.append("0");
+    }
+
+    plus.onclick = () => {
+        input.append("+");
+    }
+
+    minus.onclick = () => {
+        input.append("-");
+    }
+
+    divide.onclick = () => {
+        input.append("/");
+    }
+
+    multiply.onclick = () => {
+        input.append("*");
+    }
+
+    equal.onclick = () => {
+        display.innerText = eval(input.innerText);
+    }
+
+    backspace.onclick = () => {
+        display.innerText = "";
+        if(input.innerText.length > 0){
+            input.innerText = input.innerText.substring(0, input.innerText.length-1);
+        }
+    }
+    clear.onclick = () => {
+        display.innerText = "";
+        input.innerText = "";
+    }
+</script>
+</html>
